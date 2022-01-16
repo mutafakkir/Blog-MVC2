@@ -12,33 +12,27 @@
 else
 {
     <div class="row mx-4 mt-5">
-    @foreach(var blog in Model.Blogs)
-    {
-        <div class="col-md-6">
-            <div class="row g-0 card rounded shadow overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                    <div class="d-flex">
-                        @if(blog.Tags?.Count() > 0)
+    @foreach (var blog in Model.Blogs)
+        {
+            <div class="card my-card" style="width: 20rem;">
+                <img class="card-img-top" src="~/logo.png" alt="Card image cap">
+                <div class="card-body">
+                    @if (blog.Tags?.Count() > 0)
+                    {
+                        foreach (var tag in blog.Tags)
                         {
-                            foreach(var tag in blog.Tags)
-                            {
-                                <span class="badge bg-info text-light mx-1">Info</span>
+                            <p class="badge bg-info text-light mx-1">Info</p>
 
-                            }
                         }
-                    </div>
+                    }
                     <h3 class="mb-1">@blog.Title</h3>
                     <div class="d-flex">
-                        <div class="mb-1 text-muted">@DateTime.Now.ToString("MMM dd, yyyy")</div>
+                        <div class="mb-1 text-muted">@DateTime.UtcNow.ToString("MMM dd, yyyy")</div>
                     </div>
-                    <p class="card-text">@Html.Raw(blog.Description)</p>
-                    <a href="/post/@blog.Id" class="stretched-link">Continue reading</a>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-                    <img src="~/logoo.png" width="200" height="250">
+                    @* <p class="card-text">@Html.Raw(blog.Description)</p> *@
+                    <a href="/post/@blog.Id" class="btn btn-primary">Continue reading</a>
                 </div>
             </div>
-        </div>
-    }
-</div>
+        }
+    </div>
 }

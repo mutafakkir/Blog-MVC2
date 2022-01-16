@@ -64,7 +64,7 @@ public class BlogsController : Controller
                 return LocalRedirect($"~/post/{post.Id}");
             }
 
-            post.ModifiedAt = DateTimeOffset.UtcNow;
+            post.ModifiedAt = DateTimeOffset.UtcNow.ToLocalTime();
             post.Title = model.Title;
             post.Content = model.Content;
 
