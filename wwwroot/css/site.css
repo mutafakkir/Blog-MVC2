@@ -76,6 +76,12 @@ pre {
   border-bottom-left-radius: 0;
 }
 
+.form-signup input[type="username"] {
+  margin-bottom: -2px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
 .form-signup input[type="email"] {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
