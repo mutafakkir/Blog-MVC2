@@ -21,7 +21,7 @@ else
                     {
                         foreach (var tag in blog.Tags)
                         {
-                            <a class="badge bg-info text-light mx-1" asp-controller="Blogs" asp-action="GetBlogsByTag" asp-route-id=@tag>#@tag</a>
+                            <a class="badge bg-info text-light mx-1" asp-action="GetBlogsByTag" asp-controller="Blogs" asp-route-id="@tag">#@tag</a>
                         }
                     }
                     <h3 class="mb-1">@blog.Title</h3>

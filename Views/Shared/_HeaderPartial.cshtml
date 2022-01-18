@@ -1,3 +1,6 @@
+@{
+    string query = "";
+}
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
         <div class="container-fluid col-lg-9 col-md-10">
@@ -16,10 +19,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/write">Write</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/LogOut">Logout</a>
+                    </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2 btn-outline-edark" type="search" placeholder="Search"
-                        aria-label="Search">
+                <form class="d-flex" asp-controller="Search" asp-action="ByTagAndWord" asp-route-id="@query" method="post">
+                    <input class="form-control me-2 btn-outline-edark" type="search" placeholder="Search" name="query" asp-for="@query">
                     <button class="btn btn-outline-dark" type="submit"><i class="bi bi-search"></i></button>
                 </form>
             </div>

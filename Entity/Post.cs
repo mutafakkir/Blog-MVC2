@@ -14,6 +14,8 @@ public class Post
 
     public DateTimeOffset ModifiedAt { get; set; }
 
+    public string Tags { get; set; }
+
     public ulong Claps { get; set; }
 
     public bool Edited => CreatedAt != ModifiedAt;

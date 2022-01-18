@@ -127,3 +127,7 @@ pre {
   border-radius: 2px;
   border: black solid;
 }
+
+#taginput {
+  outline: none;
+}

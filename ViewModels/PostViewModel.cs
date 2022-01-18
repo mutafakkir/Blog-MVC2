@@ -13,7 +13,12 @@ public class PostViewModel
     [Required]
     public string Content { get; set; }
     public bool Edited { get; set; }
+
+    [RegularExpression("^[A-Za-z0-9,]+$")]
+    public string Tags { get; set; }    
     public ulong Claps { get; set; }
     public DateTimeOffset CreatedAt { get; set; }
     public string BannerImageUrl { get; set; }
+    public Guid AuthorId { get; set; }
+    public bool CanEdit { get; set; } = false;
 }

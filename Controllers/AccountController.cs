@@ -1,3 +1,4 @@
+using System.Net;
 using System.Text.Json;
 using blog2.Entity;
 using blog2.ViewModels;
@@ -20,6 +21,15 @@ public class AccountController : Controller
         _userM = userManager;
         _signInM = signInManager;
         _logger = logger;
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Logout()
+    {
+        HttpContext.Session.Clear();
+        await _signInM.SignOutAsync();
+
+        return LocalRedirect("/");
     }
 
     [HttpGet]
